@@ -5,6 +5,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import javax.annotation.Nullable;
+
+import fi.dy.masa.malilib.MaLiLib;
 import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntComparator;
@@ -139,7 +141,7 @@ public class InventoryUtils
                                                 boolean setEmptyStack)
     {
         MinecraftClient mc = MinecraftClient.getInstance();
-        ServerWorld serverWorld = mc.getServer() != null ? mc.getServer().getWorld(mc.world.getRegistryKey()) : null;
+        ServerWorld serverWorld = mc.getServer() != null ? MaLiLib.GAME_INSTANCE.getWorld(mc.world.getRegistryKey()) : null;
         World world = player.getEntityWorld();
 
         if ((world instanceof ClientWorld) && player instanceof ClientPlayerEntity)

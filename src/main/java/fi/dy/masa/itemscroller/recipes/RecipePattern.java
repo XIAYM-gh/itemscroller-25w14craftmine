@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import fi.dy.masa.malilib.MaLiLib;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.RecipeBookScreen;
@@ -101,7 +102,7 @@ public class RecipePattern
             return null;
         }
 
-        ServerWorld serverWorld = mc.getServer() != null ? mc.getServer().getWorld(mc.world.getRegistryKey()) : null;
+        ServerWorld serverWorld = mc.getServer() != null ? MaLiLib.GAME_INSTANCE.getWorld(mc.world.getRegistryKey()) : null;
 
         if (mc.isIntegratedServerRunning() && serverWorld != null)
         {
